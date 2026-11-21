@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-cream text-coffee font-body antialiased;
+    font-feature-settings: "tnum" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-coffee;
+  }
+
+  ::selection {
+    @apply bg-oat text-coffee;
+  }
+
+  /* Minimal, warm scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d8c7b2;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c8a98a;
+  }
+
+  :focus-visible {
+    outline: 2px solid #c8a98a;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .nexus-card {
+    @apply bg-ivory border border-border rounded-card shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-espresso px-4 py-2.5
+      text-sm font-semibold text-ivory transition-all duration-200 ease-out
+      hover:-translate-y-[2px] hover:bg-coffee hover:shadow-softer
+      active:translate-y-0 active:scale-[0.98]
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-oat px-4 py-2.5
+      text-sm font-semibold text-espresso transition-all duration-200 ease-out
+      hover:-translate-y-[2px] hover:bg-sand hover:shadow-soft
+      active:translate-y-0 active:scale-[0.98]
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-taupe bg-cream px-4 py-2.5
+      text-sm font-semibold text-espresso transition-all duration-200 ease-out
+      hover:-translate-y-[2px] hover:border-caramel hover:shadow-soft
+      active:translate-y-0 active:scale-[0.98]
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-border bg-ivory px-3.5 py-2.5 text-sm text-coffee
+      placeholder:text-grey/70 transition-shadow duration-200
+      focus:border-caramel focus:ring-2 focus:ring-caramel/30 focus:outline-none;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-coffee/70
+      transition-colors duration-200 hover:bg-oat/70 hover:text-coffee;
+  }
+
+  .nav-item-active {
+    @apply bg-oat text-espresso font-semibold;
+  }
+}

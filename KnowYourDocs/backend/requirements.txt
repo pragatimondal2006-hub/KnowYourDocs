@@ -1,0 +1,33 @@
+# Core API
+fastapi==0.165.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.4
+pydantic-settings==2.16.3
+python-multipart==0.0.34
+
+# Document processing
+pymupdf==2.1
+
+# Embeddings / ML
+scikit-learn==1.9.1
+numpy==2.2.6
+joblib==1.6.0
+
+# Vector search
+faiss-cpu==1.16.0
+
+# LLM integration (Anthropic API)
+httpx==0.28.1
+
+# Auth
+bcrypt==4.0.1
+PyJWT==2.7.0
+email-validator==2.4.0
+
+# Testing
+pytest==9.2.0
+
+# --- Optional: real sentence-transformers embeddings ---
+# Uncomment the line below AND set EMBEDDING_BACKEND=sentence-transformers
+# in your .env if your environment has network access to huggingface.co.
+# sentence-transformers==3.1.1
